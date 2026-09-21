@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md
+LICENSE
+LICENSE.txt
+
+# Editor files
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Node files
+node_modules
+
+# Terraform
+terraform/
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Kubernetes
+kubernetes/
