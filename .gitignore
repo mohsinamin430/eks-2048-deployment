@@ -29,3 +29,7 @@ node_modules/
 # Kubernetes
 *secret*.yaml
 *secrets*.yaml
+
+# Localstack data
+docker-compose.yaml
+localstack-data/

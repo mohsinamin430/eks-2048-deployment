@@ -13,3 +13,8 @@ variable "public_subnet_ids" {
 variable "tags" {
   type = map(string)
 }
+
+variable "cluster_version" {
+  type    = string
+  default = "1.36"
+}

@@ -11,3 +11,4 @@ module "eks" {
   public_subnet_ids  = module.vpc.public_subnet_ids
   tags               = var.tags
 }
+
