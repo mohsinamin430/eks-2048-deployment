@@ -18,3 +18,11 @@ variable "cluster_version" {
   type    = string
   default = "1.36"
 }
+
+variable "eks_node_group_role_arn" {
+  type = string
+}
+
+variable "eks_cluster_role_arn" {
+  type = string
+}

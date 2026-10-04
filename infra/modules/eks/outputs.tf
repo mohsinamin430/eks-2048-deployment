@@ -1,0 +1,15 @@
+output "oidc_issuer_url" {
+  value = aws_eks_cluster.eks_2048.identity[0].oidc[0].issuer
+}
+
+output "cluster_endpoint" {
+  value = aws_eks_cluster.eks_2048.endpoint
+}
+
+output "cluster_certificate_authority_data" {
+  value = aws_eks_cluster.eks_2048.certificate_authority[0].data
+}
+
+output "cluster_name" {
+  value = aws_eks_cluster.eks_2048.name
+}
