@@ -1,14 +1,6 @@
-## install crds using kubectl_file_documents to split the YAML into individual manifests
-data "kubectl_file_documents" "gateway_api_crds" {
-  content = file("${path.module}/helm-values/gateway-api-standard.yaml")
-}
-
-resource "kubectl_manifest" "gateway_api_crds" {
-  for_each = data.kubectl_file_documents.gateway_api_crds.manifests
-
-  yaml_body = each.value
-
-  server_side_apply = true
+module "shared_gateway-api-crds" {
+  source  = "dasmeta/shared/any//modules/gateway-api-crds"
+  version = "1.19.1"
 }
 
 resource "helm_release" "traefik" {
@@ -28,7 +20,7 @@ resource "helm_release" "traefik" {
     value = "true"
   } ]
 
-  depends_on = [kubectl_manifest.gateway_api_crds]
+  depends_on = [module.shared_gateway-api-crds]
 }
 
 resource "helm_release" "cert_manager" {
